@@ -1,0 +1,13 @@
+defaultIndent: "  "
+modifyLineBreaks:
+  reformat: 1
+substitutions:
+  - name: replace_dollars_with_brackets
+    find: '\$(.*?)\$'
+    replace: '\\(\1\\)'
+  - name: test_lambert
+    find: 'lambert'
+    replace: 'person'
+replacements:
+  - substitution: s/\$\$(.*?)\$\$/\\begin{equation*}$1\\end{equation*}/sgx
+  - substitution: s/(?<!\\)(?<!%)\$(.*?)(?<!\\)\$/\\(\1\\)/sgx
